@@ -43,7 +43,7 @@ const AdminBookings = () => {
   const markAsPaid = async (bookingId) => {
     setProcessingPayment(bookingId);
     try {
-      const response = await axios.patch(`/api/admin/bookings/${bookingId}/pay`);
+      const response = await axios.patch(`https://selfservice-q5fd.onrender.com/api/admin/bookings/${bookingId}/pay`);
       toast.success('Booking marked as paid and receipt generated');
       
       // Update the booking in the state
