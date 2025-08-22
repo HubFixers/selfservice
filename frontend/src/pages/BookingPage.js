@@ -38,7 +38,7 @@ const BookingPage = () => {
 
   const fetchService = async () => {
     try {
-      const response = await axios.get(`/api/services/${serviceId}`);
+      const response = await axios.get(`https://selfservice-q5fd.onrender.com/api/services/${serviceId}`);
       setService(response.data);
     } catch (error) {
       console.error('Error fetching service:', error);

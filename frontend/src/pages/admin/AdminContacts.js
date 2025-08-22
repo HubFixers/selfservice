@@ -15,7 +15,7 @@ const AdminContacts = () => {
 
   const fetchContacts = async () => {
     try {
-      const response = await axios.get('/api/admin/contacts');
+      const response = await axios.get('https://selfservice-q5fd.onrender.com/api/admin/contacts');
       setContacts(response.data);
     } catch (error) {
       console.error('Error fetching contacts:', error);

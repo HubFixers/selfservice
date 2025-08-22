@@ -22,7 +22,7 @@ const AdminBookings = () => {
 
   const fetchBookings = async () => {
     try {
-      const response = await axios.get('/api/admin/bookings');
+      const response = await axios.get('https://selfservice-q5fd.onrender.com/api/admin/bookings');
       setBookings(response.data);
     } catch (error) {
       console.error('Error fetching bookings:', error);
@@ -86,7 +86,7 @@ const AdminBookings = () => {
 
   const downloadPaymentProof = async (bookingId) => {
     try {
-      const response = await axios.get(`/api/admin/bookings/${bookingId}/payment-proof/download`, {
+      const response = await axios.get(`https://selfservice-q5fd.onrender.com/api/admin/bookings/${bookingId}/payment-proof/download`, {
         responseType: 'blob'
       });
       
@@ -120,7 +120,7 @@ const AdminBookings = () => {
 
   const sendReminder = async (bookingId) => {
     try {
-      const response = await axios.post(`/api/admin/send-reminder/${bookingId}`);
+      const response = await axios.post(`https://selfservice-q5fd.onrender.com/api/admin/send-reminder/${bookingId}`);
       if (response.data.success) {
         toast.success(response.data.message);
       } else {

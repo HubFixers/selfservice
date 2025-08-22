@@ -25,7 +25,7 @@ const CheckoutPage = () => {
 
   const fetchSettings = async () => {
     try {
-      const response = await axios.get('/api/settings');
+      const response = await axios.get('https://selfservice-q5fd.onrender.com/api/settings');
       setSettings(response.data);
     } catch (error) {
       console.error('Error fetching settings:', error);
@@ -63,7 +63,7 @@ const CheckoutPage = () => {
       const formData = new FormData();
       formData.append('paymentProof', paymentProofFile);
 
-      const uploadResponse = await axios.post('/api/upload/payment-proof', formData, {
+      const uploadResponse = await axios.post('https://selfservice-q5fd.onrender.com/api/upload/payment-proof', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -73,7 +73,7 @@ const CheckoutPage = () => {
       setUploading(false);
 
       // Create booking with payment proof
-      const response = await axios.post('/api/bookings', {
+      const response = await axios.post('https://selfservice-q5fd.onrender.com/api/bookings', {
         ...bookingData,
         paymentProofImage: paymentProofUrl
       });

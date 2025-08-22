@@ -26,7 +26,7 @@ const AdminServices = () => {
 
   const fetchServices = async () => {
     try {
-      const response = await axios.get('/api/admin/services');
+      const response = await axios.get('https://selfservice-q5fd.onrender.com/api/admin/services');
       setServices(response.data);
     } catch (error) {
       console.error('Error fetching services:', error);
@@ -63,7 +63,7 @@ const AdminServices = () => {
     uploadFormData.append('serviceImage', file);
 
     try {
-      const response = await axios.post('/api/upload/service', uploadFormData, {
+      const response = await axios.post('https://selfservice-q5fd.onrender.com/api/upload/service', uploadFormData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -88,14 +88,14 @@ const AdminServices = () => {
     try {
       if (editingService) {
         // Update existing service
-        const response = await axios.put(`/api/admin/services/${editingService._id}`, formData);
+        const response = await axios.put(`https://selfservice-q5fd.onrender.com/api/admin/services/${editingService._id}`, formData);
         setServices(services.map(service => 
           service._id === editingService._id ? response.data.service : service
         ));
         toast.success('Service updated successfully');
       } else {
         // Create new service
-        const response = await axios.post('/api/admin/services', formData);
+        const response = await axios.post('https://selfservice-q5fd.onrender.com/api/admin/services', formData);
         setServices([response.data.service, ...services]);
         toast.success('Service created successfully');
       }
@@ -127,7 +127,7 @@ const AdminServices = () => {
     }
 
     try {
-      await axios.delete(`/api/admin/services/${serviceId}`);
+      await axios.delete(`https://selfservice-q5fd.onrender.com/api/admin/services/${serviceId}`);
       setServices(services.filter(service => service._id !== serviceId));
       toast.success('Service deleted successfully');
     } catch (error) {

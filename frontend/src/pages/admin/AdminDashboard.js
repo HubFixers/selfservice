@@ -20,9 +20,9 @@ const AdminDashboard = () => {
   const fetchDashboardData = async () => {
     try {
       const [bookingsRes, servicesRes, contactsRes] = await Promise.all([
-        axios.get('/api/admin/bookings'),
-        axios.get('/api/admin/services'),
-        axios.get('/api/admin/contacts')
+        axios.get('https://selfservice-q5fd.onrender.com/api/admin/bookings'),
+        axios.get('https://selfservice-q5fd.onrender.com/api/admin/services'),
+        axios.get('https://selfservice-q5fd.onrender.com/api/admin/contacts')
       ]);
 
       const bookings = bookingsRes.data;

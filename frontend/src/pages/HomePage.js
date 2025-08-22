@@ -22,7 +22,7 @@ const HomePage = () => {
 
   const fetchServices = async () => {
     try {
-      const response = await axios.get('/api/services');
+      const response = await axios.get(`https://selfservice-q5fd.onrender.com/api/services`);
       setServices(response.data);
     } catch (error) {
       console.error('Error fetching services:', error);
@@ -37,7 +37,7 @@ const HomePage = () => {
     setSubmitting(true);
 
     try {
-      await axios.post('/api/contact', contactForm);
+      await axios.post(`https://selfservice-q5fd.onrender.com/api/contact`, contactForm);
       toast.success('Message sent successfully! We will get back to you soon.');
       setContactForm({ name: '', email: '', message: '' });
     } catch (error) {

@@ -57,7 +57,7 @@ const AdminSettings = () => {
 
   const fetchSettings = async () => {
     try {
-      const response = await axios.get('/api/admin/settings');
+      const response = await axios.get('https://selfservice-q5fd.onrender.com/api/admin/settings');
       setSettings(response.data);
     } catch (error) {
       console.error('Error fetching settings:', error);
@@ -117,7 +117,7 @@ const AdminSettings = () => {
     setSaving(true);
 
     try {
-      await axios.put('/api/admin/settings', settings);
+      await axios.put('https://selfservice-q5fd.onrender.com/api/admin/settings', settings);
       toast.success('Settings updated successfully');
     } catch (error) {
       toast.error(error.response?.data?.message || 'Failed to update settings');
@@ -129,7 +129,7 @@ const AdminSettings = () => {
   const testEmailConfiguration = async () => {
     setTestingEmail(true);
     try {
-      const response = await axios.post('/api/admin/test-email');
+      const response = await axios.post('https://selfservice-q5fd.onrender.com/api/admin/test-email');
       if (response.data.success) {
         toast.success(response.data.message);
       } else {

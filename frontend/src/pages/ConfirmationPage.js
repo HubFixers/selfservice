@@ -15,7 +15,7 @@ const ConfirmationPage = () => {
 
   const fetchBooking = async () => {
     try {
-      const response = await axios.get(`/api/bookings/${bookingId}`);
+      const response = await axios.get(`https://selfservice-q5fd.onrender.com/api/bookings/${bookingId}`);
       setBooking(response.data);
     } catch (error) {
       console.error('Error fetching booking:', error);
