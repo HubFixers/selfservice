@@ -107,7 +107,7 @@ const HomePage = () => {
                   {service.image && (
                     <div className="h-48 bg-secondary-200 overflow-hidden">
                       <img
-                        src={`http://localhost:5000${service.image}`}
+                        src={`https://selfservice-q5fd.onrender.com${service.image}`}
                         alt={service.name}
                         className="w-full h-full object-cover"
                       />

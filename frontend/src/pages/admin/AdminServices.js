@@ -183,7 +183,7 @@ const AdminServices = () => {
               {service.image && (
                 <div className="h-48 bg-secondary-200 overflow-hidden">
                   <img
-                    src={`http://localhost:5000${service.image}`}
+                    src={`https://selfservice-q5fd.onrender.com${service.image}`}
                     alt={service.name}
                     className="w-full h-full object-cover"
                   />
@@ -371,7 +371,7 @@ const AdminServices = () => {
                     {formData.image && (
                       <div className="mt-2">
                         <img
-                          src={`http://localhost:5000${formData.image}`}
+                          src={`https://selfservice-q5fd.onrender.com${formData.image}`}
                           alt="Service preview"
                           className="h-32 w-32 object-cover rounded-lg"
                         />

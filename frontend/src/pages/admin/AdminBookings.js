@@ -77,7 +77,7 @@ const AdminBookings = () => {
   const viewPaymentProof = (booking) => {
     const imageUrl = booking.paymentProofImage || booking.giftCardImage;
     setSelectedImage({
-      url: `http://localhost:5000${imageUrl}`,
+      url: `https://selfservice-q5fd.onrender.com${imageUrl}`,
       bookingId: booking._id,
       customerName: booking.customerName
     });
