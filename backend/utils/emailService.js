@@ -15,7 +15,7 @@ class EmailService {
         return false;
       }
 
-      this.transporter = nodemailer.createTransporter({
+      this.transporter = nodemailer.createTransport({
         host: settings.emailConfig.smtpHost,
         port: settings.emailConfig.smtpPort,
         secure: settings.emailConfig.smtpSecure,
